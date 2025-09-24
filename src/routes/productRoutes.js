@@ -10,12 +10,12 @@ router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 
 // Route to create a new product
-// router.post('/', authMiddleware.verifyToken, productController.createProduct);
+router.post('/', authMiddleware, productController.createProduct);
 
-// // Route to update a product by ID
-// router.put('/:id', authMiddleware.verifyToken, productController.updateProduct);
+// Route to update a product by ID
+router.put('/:id', authMiddleware, productController.updateProduct);
 
-// // Route to delete a product by ID
-// router.delete('/:id', authMiddleware.verifyToken, productController.deleteProduct);
+// Route to delete a product by ID
+router.delete('/:id', authMiddleware, productController.deleteProduct);
 
 module.exports = router;
